@@ -109,15 +109,3 @@ Anchor commands:
 npm run anchor:build
 npm run anchor:deploy
 ```
-
-## GitHub Safety Checklist
-
-Before pushing:
-- `.env` is not committed.
-- `wallet.json` and other private keys are not committed.
-- No API keys in source files.
-- Keep `.env.example` with placeholders only.
-
-## License
-
-MIT
