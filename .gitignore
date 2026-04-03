@@ -1,0 +1,44 @@
+# Node
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+frontend/dist/
+target/
+coverage/
+gamestate.json
+
+# Env and secrets
+.env
+.env.local
+.env.*.local
+wallet.json
+wallet.backup.json
+id.json
+*.key
+*.pem
+
+# Local toolchains / caches
+.agave-install/
+.sbf-sdk/
+.bin/
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Codex / local backups
+.codex_backup_er_fix/
+
+# Vendored dependency extras not needed for app source
+programs/vendor/**/tests/
+programs/vendor/**/security_audits/
+programs/vendor/**/package-lock.json
+programs/vendor/**/Cargo.lock
+programs/vendor/**/Cargo.toml.orig

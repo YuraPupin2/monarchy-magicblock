@@ -1,0 +1,670 @@
+{
+    "version":  "0.1.0",
+    "name":  "monopoly",
+    "instructions":  [
+                         {
+                             "name":  "initializeGame",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true,
+                                                  "signer":  false
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "writable":  true,
+                                                  "signer":  true
+                                              },
+                                              {
+                                                  "name":  "systemProgram"
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   44,
+                                                   62,
+                                                   102,
+                                                   247,
+                                                   126,
+                                                   208,
+                                                   130,
+                                                   215
+                                               ]
+                         },
+                         {
+                             "name":  "delegateGame",
+                             "accounts":  [
+                                              {
+                                                  "name":  "payer",
+                                                  "writable":  true,
+                                                  "signer":  true
+                                              },
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "ownerProgram"
+                                              },
+                                              {
+                                                  "name":  "buffer",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "delegationRecord",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "delegationMetadata",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "delegationProgram"
+                                              },
+                                              {
+                                                  "name":  "systemProgram"
+                                              }
+                                          ],
+                             "args":  [
+                                          {
+                                              "name":  "validator",
+                                              "type":  "pubkey"
+                                          }
+                                      ],
+                             "discriminator":  [
+                                                   116,
+                                                   183,
+                                                   70,
+                                                   107,
+                                                   112,
+                                                   223,
+                                                   122,
+                                                   210
+                                               ]
+                         },
+                         {
+                             "name":  "resetGame",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   97,
+                                                   146,
+                                                   71,
+                                                   156,
+                                                   110,
+                                                   206,
+                                                   124,
+                                                   224
+                                               ]
+                         },
+                         {
+                             "name":  "executeMove",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+                                          {
+                                              "name":  "dice1",
+                                              "type":  "u8"
+                                          },
+                                          {
+                                              "name":  "dice2",
+                                              "type":  "u8"
+                                          }
+                                      ],
+                             "discriminator":  [
+                                                   155,
+                                                   106,
+                                                   92,
+                                                   130,
+                                                   84,
+                                                   196,
+                                                   230,
+                                                   95
+                                               ]
+                         },
+                         {
+                             "name":  "buyProperty",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   128,
+                                                   136,
+                                                   62,
+                                                   184,
+                                                   252,
+                                                   187,
+                                                   128,
+                                                   130
+                                               ]
+                         },
+                         {
+                             "name":  "payRent",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   69,
+                                                   155,
+                                                   112,
+                                                   183,
+                                                   178,
+                                                   234,
+                                                   94,
+                                                   100
+                                               ]
+                         },
+                         {
+                             "name":  "buildHouses",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+                                          {
+                                              "name":  "propertyId",
+                                              "type":  "u8"
+                                          },
+                                          {
+                                              "name":  "count",
+                                              "type":  "u8"
+                                          }
+                                      ],
+                             "discriminator":  [
+                                                   139,
+                                                   25,
+                                                   134,
+                                                   157,
+                                                   252,
+                                                   14,
+                                                   148,
+                                                   106
+                                               ]
+                         },
+                         {
+                             "name":  "mutateTraits",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "viewer",
+                                                  "writable":  true,
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+                                          {
+                                              "name":  "targetPlayer",
+                                              "type":  "u8"
+                                          },
+                                          {
+                                              "name":  "mutationType",
+                                              "type":  "u8"
+                                          }
+                                      ],
+                             "discriminator":  [
+                                                   167,
+                                                   204,
+                                                   131,
+                                                   14,
+                                                   219,
+                                                   59,
+                                                   6,
+                                                   63
+                                               ]
+                         },
+                         {
+                             "name":  "commitGame",
+                             "accounts":  [
+                                              {
+                                                  "name":  "payer",
+                                                  "writable":  true,
+                                                  "signer":  true
+                                              },
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "magicProgram",
+                                                  "address":  "Magic11111111111111111111111111111111111111"
+                                              },
+                                              {
+                                                  "name":  "magicContext",
+                                                  "writable":  true,
+                                                  "address":  "MagicContext1111111111111111111111111111111"
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   212,
+                                                   148,
+                                                   56,
+                                                   92,
+                                                   60,
+                                                   28,
+                                                   179,
+                                                   66
+                                               ]
+                         },
+                         {
+                             "name":  "finalizeGame",
+                             "accounts":  [
+                                              {
+                                                  "name":  "gameState",
+                                                  "writable":  true
+                                              },
+                                              {
+                                                  "name":  "authority",
+                                                  "signer":  true
+                                              }
+                                          ],
+                             "args":  [
+
+                                      ],
+                             "discriminator":  [
+                                                   203,
+                                                   227,
+                                                   3,
+                                                   167,
+                                                   186,
+                                                   102,
+                                                   76,
+                                                   10
+                                               ]
+                         }
+                     ],
+    "accounts":  [
+                     {
+                         "name":  "GameState",
+                         "discriminator":  [
+                                               144,
+                                               94,
+                                               208,
+                                               172,
+                                               248,
+                                               99,
+                                               134,
+                                               120
+                                           ]
+                     }
+                 ],
+    "types":  [
+                  {
+                      "name":  "GameState",
+                      "type":  {
+                                   "kind":  "struct",
+                                   "fields":  [
+                                                  {
+                                                      "name":  "turnCount",
+                                                      "type":  "u16"
+                                                  },
+                                                  {
+                                                      "name":  "currentPlayer",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "status",
+                                                      "type":  {
+                                                                   "defined":  {
+                                                                                   "name":  "GameStatus"
+                                                                               }
+                                                               }
+                                                  },
+                                                  {
+                                                      "name":  "prizePool",
+                                                      "type":  "u64"
+                                                  },
+                                                  {
+                                                      "name":  "players",
+                                                      "type":  {
+                                                                   "array":  [
+                                                                                 {
+                                                                                     "defined":  {
+                                                                                                     "name":  "Player"
+                                                                                                 }
+                                                                                 },
+                                                                                 4
+                                                                             ]
+                                                               }
+                                                  },
+                                                  {
+                                                      "name":  "properties",
+                                                      "type":  {
+                                                                   "array":  [
+                                                                                 {
+                                                                                     "defined":  {
+                                                                                                     "name":  "Property"
+                                                                                                 }
+                                                                                 },
+                                                                                 40
+                                                                             ]
+                                                               }
+                                                  }
+                                              ]
+                               }
+                  },
+                  {
+                      "name":  "Player",
+                      "type":  {
+                                   "kind":  "struct",
+                                   "fields":  [
+                                                  {
+                                                      "name":  "id",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "position",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "balance",
+                                                      "type":  "u64"
+                                                  },
+                                                  {
+                                                      "name":  "personality",
+                                                      "type":  {
+                                                                   "defined":  {
+                                                                                   "name":  "Personality"
+                                                                               }
+                                                               }
+                                                  },
+                                                  {
+                                                      "name":  "riskTolerance",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "isBankrupt",
+                                                      "type":  "bool"
+                                                  },
+                                                  {
+                                                      "name":  "jailedTurns",
+                                                      "type":  "u8"
+                                                  }
+                                              ]
+                               }
+                  },
+                  {
+                      "name":  "Property",
+                      "type":  {
+                                   "kind":  "struct",
+                                   "fields":  [
+                                                  {
+                                                      "name":  "id",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "owner",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "basePrice",
+                                                      "type":  "u64"
+                                                  },
+                                                  {
+                                                      "name":  "baseRent",
+                                                      "type":  "u64"
+                                                  },
+                                                  {
+                                                      "name":  "houses",
+                                                      "type":  "u8"
+                                                  },
+                                                  {
+                                                      "name":  "isMortgaged",
+                                                      "type":  "bool"
+                                                  },
+                                                  {
+                                                      "name":  "propertyType",
+                                                      "type":  {
+                                                                   "defined":  {
+                                                                                   "name":  "PropertyType"
+                                                                               }
+                                                               }
+                                                  },
+                                                  {
+                                                      "name":  "colorGroup",
+                                                      "type":  {
+                                                                   "defined":  {
+                                                                                   "name":  "ColorGroup"
+                                                                               }
+                                                               }
+                                                  }
+                                              ]
+                               }
+                  },
+                  {
+                      "name":  "GameStatus",
+                      "type":  {
+                                   "kind":  "enum",
+                                   "variants":  [
+                                                    {
+                                                        "name":  "Active"
+                                                    },
+                                                    {
+                                                        "name":  "Won",
+                                                        "fields":  [
+                                                                       "u8"
+                                                                   ]
+                                                    },
+                                                    {
+                                                        "name":  "Ended"
+                                                    }
+                                                ]
+                               }
+                  },
+                  {
+                      "name":  "Personality",
+                      "type":  {
+                                   "kind":  "enum",
+                                   "variants":  [
+                                                    {
+                                                        "name":  "Gambler"
+                                                    },
+                                                    {
+                                                        "name":  "Coward"
+                                                    },
+                                                    {
+                                                        "name":  "Monopolist"
+                                                    },
+                                                    {
+                                                        "name":  "Balanced"
+                                                    }
+                                                ]
+                               }
+                  },
+                  {
+                      "name":  "PropertyType",
+                      "type":  {
+                                   "kind":  "enum",
+                                   "variants":  [
+                                                    {
+                                                        "name":  "Go"
+                                                    },
+                                                    {
+                                                        "name":  "Street"
+                                                    },
+                                                    {
+                                                        "name":  "CommunityChest"
+                                                    },
+                                                    {
+                                                        "name":  "Tax"
+                                                    },
+                                                    {
+                                                        "name":  "Chance"
+                                                    },
+                                                    {
+                                                        "name":  "Jail"
+                                                    },
+                                                    {
+                                                        "name":  "FreeParking"
+                                                    },
+                                                    {
+                                                        "name":  "GoToJail"
+                                                    },
+                                                    {
+                                                        "name":  "Railroad"
+                                                    },
+                                                    {
+                                                        "name":  "Utility"
+                                                    }
+                                                ]
+                               }
+                  },
+                  {
+                      "name":  "ColorGroup",
+                      "type":  {
+                                   "kind":  "enum",
+                                   "variants":  [
+                                                    {
+                                                        "name":  "Brown"
+                                                    },
+                                                    {
+                                                        "name":  "LightBlue"
+                                                    },
+                                                    {
+                                                        "name":  "Pink"
+                                                    },
+                                                    {
+                                                        "name":  "Orange"
+                                                    },
+                                                    {
+                                                        "name":  "Red"
+                                                    },
+                                                    {
+                                                        "name":  "Yellow"
+                                                    },
+                                                    {
+                                                        "name":  "Green"
+                                                    },
+                                                    {
+                                                        "name":  "DarkBlue"
+                                                    },
+                                                    {
+                                                        "name":  "Railroad"
+                                                    },
+                                                    {
+                                                        "name":  "Utility"
+                                                    },
+                                                    {
+                                                        "name":  "None"
+                                                    }
+                                                ]
+                               }
+                  }
+              ],
+    "errors":  [
+                   {
+                       "code":  6000,
+                       "name":  "GameNotActive",
+                       "msg":  "Game is not active"
+                   },
+                   {
+                       "code":  6001,
+                       "name":  "GameNotEnded",
+                       "msg":  "Game has not ended yet"
+                   },
+                   {
+                       "code":  6002,
+                       "name":  "PlayerBankrupt",
+                       "msg":  "Player is bankrupt"
+                   },
+                   {
+                       "code":  6003,
+                       "name":  "PlayerNotFound",
+                       "msg":  "Player not found"
+                   },
+                   {
+                       "code":  6004,
+                       "name":  "InsufficientFunds",
+                       "msg":  "Insufficient funds"
+                   },
+                   {
+                       "code":  6005,
+                       "name":  "PropertyOwned",
+                       "msg":  "Property already owned"
+                   },
+                   {
+                       "code":  6006,
+                       "name":  "NotOwner",
+                       "msg":  "Not property owner"
+                   },
+                   {
+                       "code":  6007,
+                       "name":  "InvalidDice",
+                       "msg":  "Invalid dice roll"
+                   },
+                   {
+                       "code":  6008,
+                       "name":  "InvalidBuild",
+                       "msg":  "Invalid build count"
+                   },
+                   {
+                       "code":  6009,
+                       "name":  "CannotBuy",
+                       "msg":  "Cannot buy this property"
+                   },
+                   {
+                       "code":  6010,
+                       "name":  "NoWinner",
+                       "msg":  "No winner found"
+                   }
+               ],
+    "metadata":  {
+                     "name":  "monopoly",
+                     "version":  "0.1.0",
+                     "spec":  "0.1.0",
+                     "description":  "AI Monopoly game on MagicBlock Ephemeral Rollups"
+                 },
+    "address":  "hCJnvZqxFHwUoH9R7v32wWnoLHvPm39VpaB4utoShyu"
+}

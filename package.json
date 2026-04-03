@@ -1,0 +1,50 @@
+{
+  "name": "monarchy-ai-monopoly",
+  "version": "0.1.0",
+  "description": "AI Monopoly on MagicBlock Ephemeral Rollups",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "ts-node src/server/index.ts",
+    "dev:client": "cd frontend && npm run dev",
+    "build": "tsc && npm run build:program",
+    "build:program": "$HOME/.local/share/solana/install/active_release/bin/cargo-build-sbf --manifest-path programs/monopoly/Cargo.toml",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "node dist/server/index.js",
+    "anchor:build": "$HOME/.local/share/solana/install/active_release/bin/cargo-build-sbf --manifest-path programs/monopoly/Cargo.toml",
+    "anchor:test": "anchor test",
+    "anchor:deploy": "anchor deploy",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\""
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@magicblock-labs/ephemeral-rollups-sdk": "^0.8.8",
+    "@solana/web3.js": "^1.95.0",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-phantom": "^0.9.24",
+    "cors": "^2.8.5",
+    "cross-fetch": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
